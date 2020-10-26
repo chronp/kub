@@ -1,0 +1,27 @@
+apiVersion: run.tanzu.vmware.com/v1alpha1
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster01
+spec:
+  distribution:
+    version: v1.18
+  settings:
+    network:
+      cni:
+        name: antrea
+      pods:
+        cidrBlocks:
+        - 193.0.2.0/16
+      serviceDomain: dell.local
+      services:
+        cidrBlocks:
+        - 195.51.100.0/12
+  topology:
+    controlPlane:
+      class: best-effort-xsmall
+      count: 1
+      storageClass: vsan-default-storage-policy
+    workers:
+      class: best-effort-xsmall
+      count: 3
+      storageClass: vsan-default-storage-policy
