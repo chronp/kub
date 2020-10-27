@@ -1,7 +1,7 @@
 apiVersion: run.tanzu.vmware.com/v1alpha1
 kind: TanzuKubernetesCluster
 metadata:
-  name: tkg-cluster01
+  name: tkg-cluster02
 spec:
   distribution:
     version: v1.18
